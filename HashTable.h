@@ -2,6 +2,7 @@
 #define GUAHASHTABLE_H_INCLUDED
 
 #include <stdbool.h>
+#include "List.h"
 
 struct HashTableStruct;
 typedef struct HashTableStruct HashTable;
