@@ -2,7 +2,7 @@
 #include "../List.h"
 
 void
-testGuaListLength() {
+testListLength() {
     type a1[] = {1, 2, 3};
     int n1 = 3;
     List *l1 = ListCreate(a1, n1);
@@ -23,7 +23,7 @@ testGuaListLength() {
 }
 
 void
-testGuaListContains() {
+testListContains() {
     type a1[] = {1, 2, 3};
     int n1 = 3;
     List *l1 = ListCreate(a1, n1);
@@ -43,7 +43,7 @@ testGuaListContains() {
 }
 
 void
-testGuaListAppend() {
+testListAppend() {
     type a1[] = {1, 2, 3};
     int n1 = 3;
     List *l1 = ListCreate(a1, n1);
@@ -70,7 +70,7 @@ testGuaListAppend() {
 }
 
 void
-testGuaListPrepend() {
+testListPrepend() {
     type a1[] = {1, 2, 3};
     int n1 = 3;
     List *l1 = ListCreate(a1, n1);
@@ -95,7 +95,7 @@ testGuaListPrepend() {
 }
 
 void
-testGuaListIndexOfElement() {
+testListIndexOfElement() {
     type a1[] = {1, 2, 3};
     int n1 = 3;
     List *l1 = ListCreate(a1, n1);
@@ -115,7 +115,7 @@ testGuaListIndexOfElement() {
 }
 
 void
-testGuaListInsertElementAtIndex() {
+testListInsertElementAtIndex() {
     type a1[] = {1, 2, 3};
     int n1 = 3;
     List *l1 = ListCreate(a1, n1);
@@ -141,7 +141,7 @@ testGuaListInsertElementAtIndex() {
 }
 
 void
-testGuaListShift() {
+testListShift() {
     type a1[] = {1, 2, 3};
     int n1 = 3;
     List *l1 = ListCreate(a1, n1);
@@ -150,7 +150,7 @@ testGuaListShift() {
 }
 
 void
-testGuaListElementAtIndex() {
+testListElementAtIndex() {
     type a1[] = {0, 1, 2, 3};
     int n1 = 4;
     List *l1 = ListCreate(a1, n1);
@@ -159,14 +159,12 @@ testGuaListElementAtIndex() {
 
 void
 testList() {
-
-
-    testGuaListLength();
-    testGuaListContains();
-    testGuaListAppend();
-    testGuaListPrepend();
-    testGuaListIndexOfElement();
-    testGuaListInsertElementAtIndex();
-    testGuaListShift();
-    testGuaListElementAtIndex();
+    testListLength();
+    testListContains();
+    testListAppend();
+    testListPrepend();
+    testListIndexOfElement();
+    testListInsertElementAtIndex();
+    testListShift();
+    testListElementAtIndex();
 }

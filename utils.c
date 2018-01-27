@@ -36,8 +36,9 @@ nextPrime(int length) {
 
 void
 ensure(bool condition, const char *message) {
-    // Ìõ¼þ³ÉÁ¢
     if(!condition) {
         printf("test failed: %s\n", message);
+    } else {
+        printf("test sucessed %s \n", message);
     }
 }
