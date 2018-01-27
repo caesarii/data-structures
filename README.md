@@ -16,3 +16,6 @@
 - ListRemove: 删除列表中的所有元素
 
 
+### DoubleyLinkedList
+- 方法同 List
+
