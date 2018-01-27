@@ -1,4 +1,4 @@
-obj/
-*.layout
 *.depend
 *.cbp
+*.layout
+obj/
