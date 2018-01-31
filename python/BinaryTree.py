@@ -3,28 +3,12 @@ from utils import log, formattedLog
 class Node:
     def __init__(self, element):
         self.element = element
-        self.firstChild = None
-        self.nextSibling = None
+        self.leftChild = None
+        self.rightChild = None
 
-class Tree:
+class BinaryTree:
     def __init__(self):
         self.root = Node('/')
-
-    @staticmethod
-    def children(node):
-        # 获取指定节点的所有子节点
-        siblings = []
-        first = node.firstChild
-        if first != None:
-            # 第一个子节点
-            siblings.append(first)
-            # 下一个
-            next = first.nextSibling
-            while next != None:
-                siblings.append(next)
-                next = next.nextSibling
-
-        return siblings
 
     @staticmethod
     def find(element, nodeList):
@@ -39,23 +23,21 @@ class Tree:
 
         parent = self.root
         for element in elements:
-            current = None
-
-            siblings = Tree.children(parent)
-
-            index = Tree.find(element, siblings)
+            siblings = [parent.leftChild, parent.rightChild]
+            index = BinaryTree.find(element, siblings)
             if index >= 0:
                 # 已存在的节点
                 current = siblings[index]
             else:
                 # 新节点
                 current = Node(element)
-                if len(siblings) == 0:
+                if parent.leftChild == None:
                     # 挂载为 firstChild
-                    parent.firstChild = current
+                    parent.leftChild = current
+                elif parent.rightChild == None:
+                    parent.rightChild = current
                 else:
-                    # 挂载到最后一个兄弟节点
-                    siblings[-1].nextSibling = current
+                    log('不能创建新节点')
 
             parent = current
 
@@ -68,9 +50,9 @@ class Tree:
         for element in elements:
             current = None
 
-            siblings = Tree.children(parent)
+            siblings = [parent.leftChild, parent.rightChild]
 
-            index = Tree.find(element, siblings)
+            index = BinaryTree.find(element, siblings)
             if index >= 0:
                 # 当前节点
                 current = siblings[index]
@@ -78,13 +60,15 @@ class Tree:
                 # 当前节点就是目标节点
                 if target == current.element:
                     # 删除目标节点的子节点
-                    current.firstChild = None
+                    current.leftChild = None
+                    current.rightChild = None
                     if index == 0:
-                        # 目标节点是 firstChild
-                        parent.firstChild = current.nextSibling
+                        # 目标节点是 leftChild
+                        parent.leftChild = parent.rightChild
+                        parent.rightChild = None
                     else:
-                        # 目标节点不是 firstChild
-                        siblings[index - 1].nextSibling = current.nextSibling
+                        # 目标节点是 rightChild
+                        parent.rightChild = None
                     return
             else:
                 log('要删除的节点不存在')
@@ -92,18 +76,20 @@ class Tree:
             parent = current
 
     @staticmethod
-    def preorderTraversal(node, n):
-        formattedLog(node.element, n)
-        current = node.firstChild
-        while current != None:
-            Tree.preorderTraversal(current, n + 1)
-            current = current.nextSibling
+    def preorderTraversal(tree, n):
+        if tree != None:
+            formattedLog(tree.element, n)
+            BinaryTree.preorderTraversal(tree.leftChild, n + 1)
+            BinaryTree.preorderTraversal(tree.rightChild, n + 1)
+        else:
+            return
 
     def log(self):
-        Tree.preorderTraversal(self.root, 0)
+        log(self.root)
+        BinaryTree.preorderTraversal(self.root, 0)
 
 if __name__ == '__main__':
-    t = Tree()
+    t = BinaryTree()
     t.addNode('/animal/cat/tom')
     t.addNode('/animal/rat/jerry')
     t.addNode('/plant/flower/rose')
