@@ -22,12 +22,12 @@
 
 # javascript
 ### Tree
-- addChild
+- addNode
 - removeChild
 - log
 
 ### BinaryTree
-- addChild
+- addNode
 - removeChild
 
 ### BinarySearchTree

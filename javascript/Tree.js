@@ -42,13 +42,13 @@ class Tree {
         return siblings
     }
     
-    addChild(child) {
+    addNode(node) {
         // child 描述了要添加的子节点从根节点开始完整的路径的字符串
         // 根节点用 / 表示
         // /animal/cat/tom
         
         // 元素列表
-        let elements = child.split('/')
+        let elements = node.split('/')
         elements.splice(0, 1)
         // log('elements', elements)
         
@@ -95,7 +95,7 @@ class Tree {
         
     }
     
-    removeChild(child) {
+    removeNode(child) {
         // /animal/cat/tom
         // 元素列表
         let elements = child.split('/')
@@ -134,7 +134,7 @@ class Tree {
                         parent.firstChild = current.nextSibling
                         log('first', parent)
                     } else {
-                        // 目标节点是 firstChild
+                        // 目标节点不是 firstChild
                         siblings[index - 1].nextSibling = current.nextSibling
                         log('sibling', siblings[index - 1])
                     }
@@ -171,9 +171,9 @@ class Tree {
 
 if(require.main === module) {
     const t = new Tree()
-    t.addChild('/animal/cat/tom')
-    t.addChild('/animal/rat/jerry')
-    t.addChild('/plant/flower/rose')
+    t.addNode('/animal/cat/tom')
+    t.addNode('/animal/rat/jerry')
+    t.addNode('/plant/flower/rose')
     // t.removeChild('/animal/cat')
     // t.removeChild('/animal/rat/jerry')
     t.log()
