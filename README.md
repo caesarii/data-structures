@@ -1,5 +1,6 @@
-基本数据结构的 C 实现
+基本数据结构的 C / javascript / python 实现
 
+# C
 ### List
 
 - ListCreate: 创建列表
@@ -19,3 +20,20 @@
 ### DoubleyLinkedList
 - 方法同 List
 
+# javascript
+### Tree
+- addChild
+- removeChild
+- log
+
+### BinaryTree
+- addChild
+- removeChild
+
+### BinarySearchTree
+- insert
+- find
+- findMin
+- findMax
+- clear
+- log
