@@ -7,7 +7,6 @@ const formattedLog = function(content, n) {
     log(content)
 }
 
-
 class Node {
     constructor(element) {
         this.element = element
@@ -23,7 +22,6 @@ class BinarySearchTree {
     
     static find(element, nodeList) {
         // 在结点列表中查找指定元素的 index, 找不到返回 -1
-        
         for(let i = 0; i < nodeList.length; i++) {
             const node = nodeList[i]
             if(node && node.element === element) {
@@ -54,6 +52,43 @@ class BinarySearchTree {
             }
         }
         return tree
+    }
+    
+    find(element, tree = this.root) {
+        // 查找特定元素， 找不到返回 null
+        if(tree === null) {
+            return null
+        } else if(element < tree.element) {
+            return this.find(element, tree.leftChild)
+        } else if(element > tree.element) {
+            return this.find(element, tree.rightChild)
+        } else {
+            return tree.element
+        }
+    }
+    
+    findMin(tree = this.root) {
+        if(tree === null) {
+            return null
+        } else {
+            if(tree.leftChild === null) {
+                return tree.element
+            } else {
+                return this.findMin(tree.leftChild)
+            }
+        }
+    }
+    
+    findMax(tree = this.root) {
+        if(tree === null) {
+            return null
+        } else {
+            if(tree.rightChild === null) {
+                return tree.element
+            } else {
+                return this.findMax(tree.rightChild)
+            }
+        }
     }
     
     clear(tree = this.root) {
@@ -95,6 +130,12 @@ if(require.main === module) {
     t.insert(4)
     t.insert(3)
     t.insert(5)
+    const e = t.find(9)
+    log('e', e)
+    const min = t.findMin()
+    log('min', min)
+    const max = t.findMax()
+    log('max', max)
     // t.clear()
     t.log()
     
