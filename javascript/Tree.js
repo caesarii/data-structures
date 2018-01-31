@@ -25,7 +25,7 @@ class Tree {
         // 在结点列表中查找指定元素的 index, 找不到返回 -1
         for(let i = 0; i < nodeList.length; i++) {
             const node = nodeList[i]
-            if(node.element === element) {
+            if(node && node.element === element) {
                 return i
             }
         }
@@ -155,7 +155,6 @@ class Tree {
         }
         
     }
-    
     
     preorderTraversal(node, n) {
         // preorder traversal
