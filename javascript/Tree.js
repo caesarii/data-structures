@@ -1,4 +1,4 @@
-import {log, formattedLog} from './utils'
+const {log, formattedLog} = require('./utils')
 
 class Node {
     constructor(element) {

@@ -9,7 +9,7 @@ const formattedLog = function(content, n) {
 }
 
 
-export {
+module.exports =  {
     log,
     formattedLog
 }

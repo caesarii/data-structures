@@ -1,4 +1,4 @@
-import {log, formattedLog} from './utils'
+const {log, formattedLog} = require('./utils')
 
 class Node {
     constructor(element) {
@@ -9,7 +9,7 @@ class Node {
 }
 
 class BinaryTree {
-    constructor(element) {
+    constructor() {
         this.root = new Node('/')
     }
     
@@ -25,9 +25,9 @@ class BinaryTree {
         return -1
     }
     
-    addChild(child) {
+    addNode(node) {
         // 元素列表
-        let elements = child.split('/')
+        let elements = node.split('/')
         elements.splice(0, 1)
         // log('elements', elements)
     
@@ -71,10 +71,10 @@ class BinaryTree {
         
     }
     
-    removeChild(child) {
+    removeNode(node) {
         // /animal/cat/tom
         // 元素列表
-        let elements = child.split('/')
+        let elements = node.split('/')
         elements.splice(0, 1)
         const target = elements[elements.length - 1]
         // log('elements', elements)
@@ -126,18 +126,30 @@ class BinaryTree {
     
     }
     
+    _preorderTraversal(tree, n) {
+        // preorder traversal
+        if(tree !== null) {
+            formattedLog(tree.element, n)
+            this._preorderTraversal(tree.leftChild, n + 1)
+            this._preorderTraversal(tree.rightChild, n + 1)
+        } else {
+            return
+        }
+    }
+    
+    
     log() {
-        log(this.root)
+        this._preorderTraversal(this.root, 0)
     }
 }
 
 
 if(require.main === module) {
     const t = new BinaryTree()
-    t.addChild('/animal/cat/tom')
-    t.addChild('/animal/cat/blackcat')
-    t.addChild('/animal/rat/jerry')
-    t.addChild('/plant/flower/rose')
-    t.removeChild('/animal/cat/tom')
+    t.addNode('/animal/cat/tom')
+    t.addNode('/animal/cat/blackcat')
+    t.addNode('/animal/rat/jerry')
+    t.addNode('/plant/flower/rose')
+    t.removeNode('/animal/cat/tom')
     t.log()
 }
