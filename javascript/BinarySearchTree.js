@@ -56,29 +56,16 @@ class BinarySearchTree {
         return tree
     }
     
-    removeChild(child){
-    
-    }
-    
-    find
-    
-    
-    _clearIterative(tree) {
+    clear(tree = this.root) {
         if(tree !== null) {
-            this._clearIterative(tree.leftChild)
-            this._clearIterative(tree.rightChild)
+            this.clear(tree.leftChild)
+            this.clear(tree.rightChild)
             tree.element = null
             tree.leftChild = null
             tree.rightChild = null
-        
         } else {
             return
         }
-    }
-    
-    clear(tree = this.root) {
-        let tree = this.root
-        this._clearIterative(tree)
     }
     
     _preorderTraversal(tree, n) {
@@ -108,7 +95,7 @@ if(require.main === module) {
     t.insert(4)
     t.insert(3)
     t.insert(5)
-    t.clear()
+    // t.clear()
     t.log()
     
 }
