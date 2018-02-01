@@ -1,39 +1,45 @@
 基本数据结构的 C / javascript / python 实现
 
-# C
-### List
 
-- ListCreate: 创建列表
-- ListLog: 打印列表中的所有元素
-- ListLength: 获取列表长度
-- ListContains: 检查列表中是否包含指定元素
-- ListAppend: 在列表末尾添加元素
-- ListPrepend: 在列表开始添加元素
-- ListShift: 在列表开始移除元素
-- ListIndexOfElement: 获取指定元素的索引
-- ListElementAtIndex: 获取指定索引处的元素
-- ListInsertElementAtIndex: 在指定索引位置插入元素
-- ListChangeElementAtIndex: 设置指定索引处元素的值
-- ListRemove: 删除列表中的所有元素
+### List
+- length: 获取列表长度
+- contains: 检查列表中是否包含指定元素
+- append: 在列表末尾添加元素
+- prepend: 在列表开始添加元素
+- shift: 在列表开始移除元素
+- indexOf: 获取指定元素的索引
+- elementAt: 获取指定索引处的元素
+- insert: 在指定索引位置插入元素
+- change: 设置指定索引处元素的值
+- clear: 删除列表中的所有元素
+- log: 打印列表中的所有元素
 
 
 ### DoubleyLinkedList
 - 方法同 List
 
-# javascript
+
 ### Tree
-- addNode
-- removeNode
-- log
+- insert: 插入指定节点
+- delete：删除指定节点
+- find：查找指定节点
+- preorderLog: 先序遍历
+- postorderLog: 后序遍历
+- log： 打印树中的所有元素
 
 ### BinaryTree
-- addNode
-- removeNode
+- insert: 插入指定节点
+- delete：删除指定节点
+- find：查找指定节点
+- preorderLog: 先序遍历
+- postorderLog: 后序遍历
+- log： 打印树中的所有元素
 
-### BinarySearchTree
-- insert
-- find
-- findMin
-- findMax
-- clear
-- log
+### BST
+- insert: 插入指定节点
+- delete：删除指定节点
+- find：查找指定节点
+- findMin: 查找最小元素
+- findMax：查找最大元素
+- clear： 删除所有元素
+- log： 打印树中的所有元素
