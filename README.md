@@ -1,6 +1,19 @@
+# data structure in C / JavaScript / Python
+
 基本数据结构的 C / javascript / python 实现
 
+## data structure list
+- linked list
+- doubly linked list
+- stack
+- queue
+- hash table
+- tree
+- binary tree
+- binary search tree
+- 
 
+## ADT
 ### List
 - length: 获取列表长度
 - contains: 检查列表中是否包含指定元素
@@ -15,7 +28,7 @@
 - log: 打印列表中的所有元素
 
 
-### DoubleyLinkedList
+### DoublyLinkedList
 - 方法同 List
 
 
@@ -43,3 +56,7 @@
 - findMax：查找最大元素
 - clear： 删除所有元素
 - log： 打印树中的所有元素
+
+
+## Todos
+- 补全 js, python 实现的基本数据结构

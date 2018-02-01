@@ -137,7 +137,6 @@ class BinaryTree {
         }
     }
     
-    
     log() {
         BinaryTree.preorderTraversal(this.root, 0)
     }

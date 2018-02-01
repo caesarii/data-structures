@@ -112,7 +112,6 @@ class BinarySearchTree {
     }
 }
 
-
 if(require.main === module) {
     const t = new BinarySearchTree()
     t.insert(6)
