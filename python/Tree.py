@@ -33,7 +33,7 @@ class Tree:
                 return i
         return -1
 
-    def addNode(self, node):
+    def insert(self, node):
         elements = node.split('/')[1:]
         log('elements', elements)
 
@@ -59,7 +59,7 @@ class Tree:
 
             parent = current
 
-    def removeNode(self, node):
+    def delete(self, node):
         elements = node.split('/')[1:]
         target = elements[-1]
         # log('elements', elements)
@@ -104,9 +104,9 @@ class Tree:
 
 if __name__ == '__main__':
     t = Tree()
-    t.addNode('/animal/cat/tom')
-    t.addNode('/animal/rat/jerry')
-    t.addNode('/plant/flower/rose')
-    t.removeNode('/animal/cat')
-    t.removeNode('/animal/rat/jerry')
+    t.insert('/animal/cat/tom')
+    t.insert('/animal/rat/jerry')
+    t.insert('/plant/flower/rose')
+    t.delete('/animal/cat')
+    t.delete('/animal/rat/jerry')
     t.log()

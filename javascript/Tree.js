@@ -42,7 +42,7 @@ class Tree {
         return siblings
     }
     
-    addNode(node) {
+    insert(node) {
         // child 描述了要添加的子节点从根节点开始完整的路径的字符串
         // 根节点用 / 表示
         // /animal/cat/tom
@@ -95,7 +95,7 @@ class Tree {
         
     }
     
-    removeNode(child) {
+    del(child) {
         // /animal/cat/tom
         // 元素列表
         let elements = child.split('/')
@@ -148,13 +148,13 @@ class Tree {
         
     }
     
-    preorderTraversal(node, n) {
+    static preorderTraversal(node, n) {
         // preorder traversal
         formattedLog(node.element, n)
         // 遍历元素所有的子级元素
         let current = node.firstChild
         while(current !== null) {
-            this.preorderTraversal(current, n + 1)
+            Tree.preorderTraversal(current, n + 1)
             current = current.nextSibling
         }
     }
@@ -164,18 +164,18 @@ class Tree {
     }
     
     log() {
-        this.preorderTraversal(this.root, 0)
+        Tree.preorderTraversal(this.root, 0)
     }
 }
 
 
 if(require.main === module) {
     const t = new Tree()
-    t.addNode('/animal/cat/tom')
-    t.addNode('/animal/rat/jerry')
-    t.addNode('/plant/flower/rose')
-    // t.removeChild('/animal/cat')
-    // t.removeChild('/animal/rat/jerry')
+    t.insert('/animal/cat/tom')
+    t.insert('/animal/rat/jerry')
+    t.insert('/plant/flower/rose')
+    t.del('/animal/cat')
+    t.del('/animal/rat/jerry')
     t.log()
 }
 

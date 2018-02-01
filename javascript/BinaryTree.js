@@ -25,7 +25,7 @@ class BinaryTree {
         return -1
     }
     
-    addNode(node) {
+    insert(node) {
         // 元素列表
         let elements = node.split('/')
         elements.splice(0, 1)
@@ -71,7 +71,7 @@ class BinaryTree {
         
     }
     
-    removeNode(node) {
+    del(node) {
         // /animal/cat/tom
         // 元素列表
         let elements = node.split('/')
@@ -146,10 +146,10 @@ class BinaryTree {
 
 if(require.main === module) {
     const t = new BinaryTree()
-    t.addNode('/animal/cat/tom')
-    t.addNode('/animal/cat/blackcat')
-    t.addNode('/animal/rat/jerry')
-    t.addNode('/plant/flower/rose')
-    t.removeNode('/animal/cat/tom')
+    t.insert('/animal/cat/tom')
+    t.insert('/animal/cat/blackcat')
+    t.insert('/animal/rat/jerry')
+    t.insert('/plant/flower/rose')
+    t.del('/animal/cat/tom')
     t.log()
 }
