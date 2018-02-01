@@ -126,12 +126,12 @@ class BinaryTree {
     
     }
     
-    _preorderTraversal(tree, n) {
+    static preorderTraversal(tree, n) {
         // preorder traversal
         if(tree !== null) {
             formattedLog(tree.element, n)
-            this._preorderTraversal(tree.leftChild, n + 1)
-            this._preorderTraversal(tree.rightChild, n + 1)
+            BinaryTree.preorderTraversal(tree.leftChild, n + 1)
+            BinaryTree.preorderTraversal(tree.rightChild, n + 1)
         } else {
             return
         }
@@ -139,7 +139,7 @@ class BinaryTree {
     
     
     log() {
-        this._preorderTraversal(this.root, 0)
+        BinaryTree.preorderTraversal(this.root, 0)
     }
 }
 
