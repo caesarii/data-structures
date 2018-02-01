@@ -8,6 +8,17 @@ const formattedLog = function(content, n) {
     log(content)
 }
 
+const max = function(...args) {
+    log(args)
+    let max = args[0]
+    for(let i = 1; i < args.length; i++) {
+        if(args[i] > max) {
+            max = args[i]
+        }
+    }
+    
+    return max
+}
 
 module.exports =  {
     log,
