@@ -22,5 +22,6 @@ const max = function(...args) {
 
 module.exports =  {
     log,
-    formattedLog
+    formattedLog,
+    max,
 }
