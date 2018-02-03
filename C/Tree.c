@@ -3,26 +3,50 @@
 #include <assert.h>
 #include "Tree.h"
 
+typedef int type;
+
 struct NodeStruct {
+    type element;
     Node *firstChild;
+    Node *nextSiblings;
 };
 
 struct TreeStruct {
-    type element;
-    Node *firstChild;
-    Node *nextSibling;
+    Node *root;
 };
 
 Tree *
-TreeCreate(List *list) {
+TreeCreate(void) {
     Tree *tree = malloc(sizeof(Tree));
-    tree->firstChild = NULL;
+    tree->root = NULL;
 
-    int length = list->length;
-    for(int i = 0; i < length; i++) {
-        Node n = malloc(sizeof(Node));
-        n->element = ListElementAtIndex(list, i);
-        n->nextSibling = NULL;
-        n->firstChild =
-    }
+    return tree;
 }
+
+
+void
+TreeInsert(Tree * tree, int *elements, int numberOfElements) {
+
+
+    Node *parent = tree.root;
+    for(int i = 0; i < numberOfElements; i++) {
+        // ÐÂ½Úµã
+        Node *n = malloc(sizeof(Node));
+        n->element = elements[i];
+        n->firstChild = NULL;
+        n->nextSiblings = NULL;
+
+       // todo
+
+
+        list->next = n;
+        if(i == numberOfElements - 1) {
+            list->tail = n;
+        }
+    }
+
+
+
+    return void;
+}
+

@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 //#include "./test/testdllist.c"
+//#include "./test/testtree.c"
 int main()
 {
 //    testList();
@@ -8,7 +9,9 @@ int main()
 //    testStack();
 //    testHashTable();
 
-    testDLList();
+//    testDLList();
+
+    testTree();
     printf("Hello world!\n");
     return 0;
 }
