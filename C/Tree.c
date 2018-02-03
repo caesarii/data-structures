@@ -24,29 +24,29 @@ TreeCreate(void) {
 }
 
 
-void
-TreeInsert(Tree * tree, int *elements, int numberOfElements) {
-
-
-    Node *parent = tree.root;
-    for(int i = 0; i < numberOfElements; i++) {
-        // 新节点
-        Node *n = malloc(sizeof(Node));
-        n->element = elements[i];
-        n->firstChild = NULL;
-        n->nextSiblings = NULL;
-
-       // todo
-
-
-        list->next = n;
-        if(i == numberOfElements - 1) {
-            list->tail = n;
-        }
-    }
-
-
-
-    return void;
-}
+//void
+//TreeInsert(Tree * tree, int *elements, int numberOfElements) {
+//
+//
+//    Node *parent = tree.root;
+//    for(int i = 0; i < numberOfElements; i++) {
+//         新节点
+//        Node *n = malloc(sizeof(Node));
+//        n->element = elements[i];
+//        n->firstChild = NULL;
+//        n->nextSiblings = NULL;
+//
+//        todo
+//
+//
+//        list->next = n;
+//        if(i == numberOfElements - 1) {
+//            list->tail = n;
+//        }
+//    }
+//
+//
+//
+//    return void;
+//}
 

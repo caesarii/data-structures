@@ -12,6 +12,6 @@ Tree *
 TreeCreate(void);
 
 void
-TreeInsert(Tree *tree, char * node);
+TreeInsert(Tree * tree, int *elements, int numberOfElements);
 
 #endif // TREE_H_INCLUDED

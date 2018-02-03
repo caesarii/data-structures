@@ -11,7 +11,7 @@ int main()
 
 //    testDLList();
 
-    testTree();
+    testBST();
     printf("Hello world!\n");
     return 0;
 }
