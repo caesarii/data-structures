@@ -40,7 +40,7 @@ class BinarySearchTree {
                 // 添加到右树
                 tree.rightChild = this._insertIterative(element, tree.rightChild)
             } else {
-                log('elemetn is in the tree already')
+                log('element is in the tree already')
             }
         }
         return tree

@@ -24,7 +24,7 @@ BSTCreate(void) {
 
 void
 BSTInsert(Tree * tree, type element) {
-    tree->root = BSTInsertIterative(tree, element);
+    tree->root = BSTInsertIterative(tree->root, element);
 
 }
 
@@ -33,14 +33,22 @@ BSTInsertIterative(Node *tree, type element) {
     if(tree == NULL) {
         Node *n = malloc(sizeof(Node));
         n->element = element;
-        n->leftChild = NULL;
-        n->rightChild = NULL;
+        n->leftChild = NULL; // malloc(sizeof(Node));
+        n->rightChild = NULL; //malloc(sizeof(Node));
         tree = n;
-        printf("null tree");
+        printf("null tree \n");
     } else {
+
+        type e = tree->element;
+
+        printf("%d \n", e);
+
+
         if(element < tree->element) {
+            printf("left");
             tree->leftChild = BSTInsertIterative(tree->leftChild, element);
         } else if(element > tree->element) {
+            printf("right %d \n", tree->rightChild == NULL);
             tree->rightChild = BSTInsertIterative(tree->rightChild, element);
         } else {
             printf("element is in the tree already");
@@ -49,3 +57,11 @@ BSTInsertIterative(Node *tree, type element) {
     return tree;
 
 }
+
+void
+BSTLog(Tree *tree) {
+    printf("element: %d \n", tree->root->element);
+    printf("element: %d \n", tree->root->rightChild->element);
+    printf("element: %d \n", tree->root->leftChild->element);
+}
+

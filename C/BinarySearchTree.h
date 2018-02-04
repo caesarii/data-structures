@@ -17,4 +17,7 @@ BSTInsert(Tree * tree, type element);
 Node *
 BSTInsertIterative(Node *tree, type element);
 
+void
+BSTLog(Tree *tree);
+
 #endif // BINARYSEARCHTREE_H_INCLUDED
