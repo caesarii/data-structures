@@ -18,6 +18,9 @@ Node *
 BSTInsertIterative(Node *tree, type element);
 
 void
+preorderTraversal(Node *tree, int n);
+
+void
 BSTLog(Tree *tree);
 
 #endif // BINARYSEARCHTREE_H_INCLUDED

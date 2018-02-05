@@ -1,7 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
 #include <assert.h>
 #include "BinarySearchTree.h"
+#include "utils.h"
 
 
 struct NodeStruct {
@@ -36,22 +38,18 @@ BSTInsertIterative(Node *tree, type element) {
         n->leftChild = NULL; // malloc(sizeof(Node));
         n->rightChild = NULL; //malloc(sizeof(Node));
         tree = n;
-        printf("null tree \n");
+        printf("¿ÕÊ÷ \n");
     } else {
 
         type e = tree->element;
-
-        printf("%d \n", e);
-
-
         if(element < tree->element) {
-            printf("left");
+            printf("left \n");
             tree->leftChild = BSTInsertIterative(tree->leftChild, element);
         } else if(element > tree->element) {
             printf("right %d \n", tree->rightChild == NULL);
             tree->rightChild = BSTInsertIterative(tree->rightChild, element);
         } else {
-            printf("element is in the tree already");
+            printf("element is in the tree already \n");
         }
     }
     return tree;
@@ -59,9 +57,17 @@ BSTInsertIterative(Node *tree, type element) {
 }
 
 void
-BSTLog(Tree *tree) {
-    printf("element: %d \n", tree->root->element);
-    printf("element: %d \n", tree->root->rightChild->element);
-    printf("element: %d \n", tree->root->leftChild->element);
+preorderTraversal(Node *tree, int n) {
+    if(tree != NULL) {
+        formattedLog(tree->element, n);
+        preorderTraversal(tree->leftChild, n + 1);
+        preorderTraversal(tree->rightChild, n + 1);
+    }
 }
+
+void
+BSTLog(Tree *tree) {
+    preorderTraversal(tree->root, 0);
+}
+
 

@@ -42,3 +42,10 @@ ensure(bool condition, const char *message) {
         printf("test sucessed %s \n", message);
     }
 }
+
+void formattedLog(int element, int n) {
+    for(int i = 0; i < n; i++) {
+        printf("___|");
+    }
+    printf("%d \n", element);
+}

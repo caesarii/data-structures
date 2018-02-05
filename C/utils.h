@@ -12,4 +12,8 @@ nextPrime(int length);
 void
 ensure(bool condition, const char *message);
 
+
+void
+formattedLog(int element, int n);
+
 #endif // UTILS_H_INCLUDED

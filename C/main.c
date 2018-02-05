@@ -12,6 +12,7 @@ int main()
 //    testDLList();
 
     testBST();
-    printf("Hello world!\n");
+
+    printf("\nHello world!\n");
     return 0;
 }
