@@ -33,13 +33,11 @@ BSTInsert(Tree * tree, type element) {
         tree = n;
     } else if(tree->element == NULL) {
         tree->element = element;
-        printf("≥ı ºªØ \n");
+        printf("first element \n");
     } else {
         if(element < tree->element) {
-//            printf("left \n");
             tree->leftChild = BSTInsert(tree->leftChild, element);
         } else if(element > tree->element) {
-//            printf("right %d \n", tree->rightChild == NULL);
             tree->rightChild = BSTInsert(tree->rightChild, element);
         } else {
             printf("element is in the tree already \n");
@@ -53,10 +51,8 @@ BSTFind(Tree *tree, type element) {
     if(tree == NULL) {
         return 0;
     } else if(element < tree->element) {
-        printf("left \n");
         return BSTFind(tree->leftChild, element);
     } else if(element > tree->element) {
-         printf("right \n");
         return BSTFind(tree->rightChild, element);
     } else {
         return tree->element;
