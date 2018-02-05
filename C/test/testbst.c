@@ -14,10 +14,12 @@ void testBSTInsert(void) {
     BSTInsert(tree, 6);
 
     type e = BSTFind(tree, 6);
-    printf("e: %d \n", e);
-    type min = BSTFindMin(tree);;
+    printf("target: %d \n", e);
+
+    type min = BSTFindMin(tree);
     printf("min: %d \n", min);
-    int max = BSTFindMax(tree);
+
+    type max = BSTFindMax(tree);
     printf("max: %d \n", max);
 
     BSTLog(tree);
@@ -25,5 +27,4 @@ void testBSTInsert(void) {
 
 void testBST(void) {
     testBSTInsert();
-
 }
