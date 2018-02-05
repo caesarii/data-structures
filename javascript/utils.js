@@ -20,8 +20,24 @@ const max = function(...args) {
     return max
 }
 
+const heapLog = (element, n) => {
+    let found = false
+    
+    for(let i = 0; i < 30; i++) {
+        if(n === Math.pow(2, i) - 1) {
+            found = true
+        }
+    }
+    log(element)
+    // log('n', n, found)
+    if(found) {
+        log('___')
+    }
+}
+
 module.exports =  {
     log,
     formattedLog,
     max,
+    heapLog,
 }

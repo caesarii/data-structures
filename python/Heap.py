@@ -30,8 +30,6 @@ class Heap:
         current = 1
         min = self.elements[current]
         last = self.elements[self.length]
-        # 删除 min
-        self.elements[current] = last
         # 删除最后一个元素
         self.elements[self.length] = None
 
