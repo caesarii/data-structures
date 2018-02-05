@@ -1,8 +1,6 @@
 #ifndef BINARYSEARCHTREE_H_INCLUDED
 #define BINARYSEARCHTREE_H_INCLUDED
 
-struct NodeStruct;
-typedef struct NodeStruct Node;
 struct TreeStruct;
 typedef struct TreeStruct Tree;
 
@@ -11,14 +9,23 @@ typedef int type;
 Tree *
 BSTCreate(void);
 
-void
+Tree *
 BSTInsert(Tree * tree, type element);
 
-Node *
-BSTInsertIterative(Node *tree, type element);
+Tree *
+BSTInsertIterative(Tree *tree, type element);
 
 void
-preorderTraversal(Node *tree, int n);
+preorderTraversal(Tree *tree, int n);
+
+type
+BSTFind(Tree *tree, type element);
+
+type
+BSTFindMin(Tree *tree);
+
+type
+BSTFindMax(Tree *tree);
 
 void
 BSTLog(Tree *tree);

@@ -6,58 +6,90 @@
 #include "utils.h"
 
 
-struct NodeStruct {
+struct TreeStruct {
     type element;
-    Node *leftChild;
-    Node *rightChild;
+    Tree *leftChild;
+    Tree *rightChild;
 };
 
-struct TreeStruct {
-    Node *root;
-};
 
 Tree *
 BSTCreate(void) {
     Tree *tree = malloc(sizeof(Tree));
-    tree->root = NULL;
+    tree->element = NULL;
+    tree->leftChild = NULL;
+    tree->rightChild = NULL;
     return tree;
 
 }
 
-void
+Tree *
 BSTInsert(Tree * tree, type element) {
-    tree->root = BSTInsertIterative(tree->root, element);
-
-}
-
-Node *
-BSTInsertIterative(Node *tree, type element) {
-    if(tree == NULL) {
-        Node *n = malloc(sizeof(Node));
+    if (tree == NULL) {
+        Tree *n = malloc(sizeof(Tree));
         n->element = element;
-        n->leftChild = NULL; // malloc(sizeof(Node));
-        n->rightChild = NULL; //malloc(sizeof(Node));
+        n->leftChild = NULL;
+        n->rightChild = NULL;
         tree = n;
-        printf("¿ÕÊ÷ \n");
+    } else if(tree->element == NULL) {
+        tree->element = element;
+        printf("³õÊ¼»¯ \n");
     } else {
-
-        type e = tree->element;
         if(element < tree->element) {
             printf("left \n");
-            tree->leftChild = BSTInsertIterative(tree->leftChild, element);
+            tree->leftChild = BSTInsert(tree->leftChild, element);
         } else if(element > tree->element) {
             printf("right %d \n", tree->rightChild == NULL);
-            tree->rightChild = BSTInsertIterative(tree->rightChild, element);
+            tree->rightChild = BSTInsert(tree->rightChild, element);
         } else {
             printf("element is in the tree already \n");
         }
     }
     return tree;
-
 }
 
+type
+BSTFind(Tree *tree, type element) {
+    type e = tree->element;
+    if(tree == NULL) {
+        return NULL;
+    } else if(element < e) {
+        return BSTFind(tree->leftChild, element);
+    } else if(element > e) {
+        return BSTFind(tree->rightChild, element);
+    } else {
+        return tree->element;
+    }
+}
+
+//type
+//BSTFindMin(Tree *tree) {
+//    if(tree == NULL) {
+//        return NULL;
+//    } else {
+//        if(tree->leftChild == NULL) {
+//            return tree->element;
+//        } else {
+//            return BSTFindMin(tree->leftChild);
+//        }
+//    }
+//}
+//
+//type
+//BSTFindMax(Tree *tree) {
+//    if(tree == NULL) {
+//        return NULL;
+//    } else {
+//        if(tree->rightChild == NULL) {
+//            return tree->element;
+//        } else {
+//            return BSTFindMax(tree.rightChild);
+//        }
+//    }
+//}
+
 void
-preorderTraversal(Node *tree, int n) {
+preorderTraversal(Tree *tree, int n) {
     if(tree != NULL) {
         formattedLog(tree->element, n);
         preorderTraversal(tree->leftChild, n + 1);
@@ -67,7 +99,7 @@ preorderTraversal(Node *tree, int n) {
 
 void
 BSTLog(Tree *tree) {
-    preorderTraversal(tree->root, 0);
+    preorderTraversal(tree, 0);
 }
 
 
