@@ -36,10 +36,10 @@ BSTInsert(Tree * tree, type element) {
         printf("≥ı ºªØ \n");
     } else {
         if(element < tree->element) {
-            printf("left \n");
+//            printf("left \n");
             tree->leftChild = BSTInsert(tree->leftChild, element);
         } else if(element > tree->element) {
-            printf("right %d \n", tree->rightChild == NULL);
+//            printf("right %d \n", tree->rightChild == NULL);
             tree->rightChild = BSTInsert(tree->rightChild, element);
         } else {
             printf("element is in the tree already \n");
@@ -50,43 +50,44 @@ BSTInsert(Tree * tree, type element) {
 
 type
 BSTFind(Tree *tree, type element) {
-    type e = tree->element;
     if(tree == NULL) {
-        return NULL;
-    } else if(element < e) {
+        return 0;
+    } else if(element < tree->element) {
+        printf("left \n");
         return BSTFind(tree->leftChild, element);
-    } else if(element > e) {
+    } else if(element > tree->element) {
+         printf("right \n");
         return BSTFind(tree->rightChild, element);
     } else {
         return tree->element;
     }
 }
 
-//type
-//BSTFindMin(Tree *tree) {
-//    if(tree == NULL) {
-//        return NULL;
-//    } else {
-//        if(tree->leftChild == NULL) {
-//            return tree->element;
-//        } else {
-//            return BSTFindMin(tree->leftChild);
-//        }
-//    }
-//}
-//
-//type
-//BSTFindMax(Tree *tree) {
-//    if(tree == NULL) {
-//        return NULL;
-//    } else {
-//        if(tree->rightChild == NULL) {
-//            return tree->element;
-//        } else {
-//            return BSTFindMax(tree.rightChild);
-//        }
-//    }
-//}
+type
+BSTFindMin(Tree *tree) {
+    if(tree == NULL) {
+        return 0;
+    } else {
+        if(tree->leftChild == NULL) {
+            return tree->element;
+        } else {
+            return BSTFindMin(tree->leftChild);
+        }
+    }
+}
+
+type
+BSTFindMax(Tree *tree) {
+    if(tree == NULL) {
+        return 0;
+    } else {
+        if(tree->rightChild == NULL) {
+            return tree->element;
+        } else {
+            return BSTFindMax(tree->rightChild);
+        }
+    }
+}
 
 void
 preorderTraversal(Tree *tree, int n) {
