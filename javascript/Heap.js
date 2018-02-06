@@ -9,53 +9,61 @@ class Heap {
     
     insert(element) {
         if(this.length === 0) {
+            // 插入第一个元素
             this.elements[1] = element
-            this.length += 1
-            return
-        }
-        
-        this.length ++
-        let index = this.length
-        while (true) {
-            const parentIndex = Math.floor(index / 2)
-            const parent = this.elements[parentIndex]
-            if(parent && parent > element) {
+            this.length ++
+        } else {
+            this.length ++
+            // 此处 index 的最小值是 2, 保证 parentIndex 最小值是 1
+            let index = this.length
+            let parentIndex = Math.floor(index / 2)
+            let parent = this.elements[parentIndex]
+            while (parent > element) {
+                // 将 parent 元素下移
                 this.elements[index] = parent
+                // index 变成之前的 parent
                 index = Math.floor(index / 2)
-            } else {
-                this.elements[index] = element
-                return
+                parentIndex = Math.floor(index / 2)
+                parent = this.elements[parentIndex]
             }
+            // 插入元素
+            this.elements[index] = element
         }
     }
     
     deleteMin() {
         let current = 1
         const min = this.elements[current]
+        // 因为第一个元素忽略, 所以 length 是最后一个元素的索引
         const last = this.elements[this.length]
+        // 删除最后一个元素
         this.elements[this.length] = undefined
-        
-        this.length -= 1
-        
-        while(true) {
-            let child = current * 2
-            if(child <= this.length) {
-                if(child + 1 <= this.length && this.elements[child + 1] < this.elements[child]) {
-                    child += 1
-                }
-                if(this.elements[child] < last) {
-                    this.elements[current] = this.elements[child]
-                    current = child
-                } else {
-                    break
-                }
+    
+        let child = current * 2
+        while(child <= this.length) {
+            // 使用子元素中的较小值
+            if(child + 1 <= this.length && this.elements[child + 1] < this.elements[child]) {
+                child += 1
+            }
+    
+            if(this.elements[child] < last) {
+                // 将子元素上浮
+                this.elements[current] = this.elements[child]
+                current = child
+                child = current * 2
             } else {
                 break
             }
         }
-        
+    
+        // 插入 last
+        log('last', last)
         this.elements[current] = last
         return min
+    }
+    
+    isFull() {
+        return this.capacity === this.length
     }
     
     log() {

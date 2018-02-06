@@ -28,7 +28,9 @@ const heapLog = (element, n) => {
             found = true
         }
     }
-    log(element)
+    if(element) {
+        log(element)
+    }
     // log('n', n, found)
     if(found) {
         log('___')
