@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "List.h"
-#include "HashTable.h"
+#include "hashTable.h"
 #include "utils.h"
 
 struct HashTableStruct {

@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "../Tree.h"
+#include "Tree.h"
 
 
 

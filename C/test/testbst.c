@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "../BinarySearchTree.h"
+#include "BinarySearchTree.h"
 
 
 void testBSTInsert(void) {
