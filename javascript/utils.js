@@ -8,6 +8,10 @@ const formattedLog = function(content, n) {
     log(content)
 }
 
+const half = n => {
+    return Math.floor(n / 2)
+}
+
 const max = function(...args) {
     log(args)
     let max = args[0]
@@ -42,4 +46,5 @@ module.exports =  {
     formattedLog,
     max,
     heapLog,
+    half,
 }

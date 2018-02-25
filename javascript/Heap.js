@@ -1,4 +1,4 @@
-const {log, heapLog} = require('./utils')
+const {log, heapLog, half} = require('./utils')
 
 class Heap {
     constructor(capacity) {
@@ -16,14 +16,14 @@ class Heap {
             this.length ++
             // 此处 index 的最小值是 2, 保证 parentIndex 最小值是 1
             let index = this.length
-            let parentIndex = Math.floor(index / 2)
+            let parentIndex = half(index)
             let parent = this.elements[parentIndex]
             while (parent > element) {
                 // 将 parent 元素下移
                 this.elements[index] = parent
                 // index 变成之前的 parent
-                index = Math.floor(index / 2)
-                parentIndex = Math.floor(index / 2)
+                index = half(index)
+                parentIndex = half(index)
                 parent = this.elements[parentIndex]
             }
             // 插入元素
