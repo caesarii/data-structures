@@ -41,10 +41,18 @@ const heapLog = (element, n) => {
     }
 }
 
+const exchange = (list, i, j) => {
+    // 交换 list 中索引为 i, j的元素
+    const temp = list[i]
+    list[i] = list[j]
+    list[j] = temp
+}
+
 module.exports =  {
     log,
     formattedLog,
     max,
     heapLog,
     half,
+    exchange,
 }
