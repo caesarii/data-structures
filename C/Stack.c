@@ -37,11 +37,12 @@ StackPop(Stack *stack) {
 
 bool
 StackIsEmpty(Stack *stack) {
-    if(ListLength(stack->list) == 0) {
-        return true;
-    } else {
-        return false;
-    }
+    return ListLength(stack->list) == 0;
+//    if(ListLength(stack->list) == 0) {
+//        return true;
+//    } else {
+//        return false;
+//    }
 }
 
 void
