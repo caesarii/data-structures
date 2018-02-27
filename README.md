@@ -3,15 +3,15 @@
 基本数据结构的 C / javascript / python 实现
 
 ## data structure list
-- linked list
-- doubly linked list
-- stack
-- queue
-- hash table
-- tree
-- binary tree
-- binary search tree
--
+- linked list: 单链表
+- doubly linked list： 双链表
+- stack： 栈
+- queue： 队列
+- hash table： 哈希表
+- tree： 树
+- binary tree： 二叉树
+- binary search tree： 二叉搜索树
+- Heap： 二叉堆
 
 ## ADT
 ### List
@@ -31,6 +31,23 @@
 ### DoublyLinkedList
 - 方法同 List
 
+### Stack
+- push
+- pop
+- isEmpty
+- clear
+
+### Queue
+- enqueue
+- dequeue
+- isEmpty
+- clear
+
+### HashTable
+- set
+- get
+- has
+- clear
 
 ### Tree
 - insert: 插入指定节点
@@ -57,8 +74,11 @@
 - clear： 删除所有元素
 - log： 打印树中的所有元素
 
+### Heap
+- insert
+- deleteMin
+- log
 
 ## Todos
 - 补全 js, python 实现的基本数据结构
-- git test
-- git test sourcetree
+
