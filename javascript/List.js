@@ -179,3 +179,5 @@ if(require.main = module) {
     ensure(list.length === 0, 'test list clear')
     
 }
+
+module.exports = List
