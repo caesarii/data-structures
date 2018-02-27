@@ -38,12 +38,12 @@ QueueDequeue(Queue *queue) {
 
 bool
 QueueIsEmpty(Queue *queue) {
-
-    if(ListLength(queue->list) == 0) {
-        return true;
-    } else {
-        return false;
-    }
+    return ListLength(queue->list) == 0
+//    if(ListLength(queue->list) == 0) {
+//        return true;
+//    } else {
+//        return false;
+//    }
 }
 
 void
