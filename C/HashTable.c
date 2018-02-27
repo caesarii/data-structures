@@ -49,12 +49,9 @@ bool
 HashTableHas(HashTable * table, const char * key) {
     int index = hash(key, table->length);
 
-    bool has = true;
     List * l = (table->array)[index];
-    if(ListLength(l) == 0) {
-        has = false;
-    }
-    return has;
+    return ListLength(l) != 0;
+    
 };
 
 int
