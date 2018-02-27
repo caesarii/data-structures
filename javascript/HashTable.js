@@ -26,7 +26,6 @@ class HashTable {
     has(key) {
         const index = hash(key, this.length)
         const list = this.array[index]
-        log(list)
         return list.length !== 0
     }
     
