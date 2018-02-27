@@ -1,4 +1,3 @@
-
 const {log, ensure} = require('./utils')
 const List = require('./List')
 
@@ -38,3 +37,4 @@ if(require.main === module) {
     s.log()
     log(s.isEmpty())
 }
+
