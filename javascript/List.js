@@ -61,11 +61,6 @@ class List {
         return e
     }
     
-    unshift() {
-        // 删除尾部元素
-        // 使用双向链表
-    }
-    
     contains(target) {
         let current = this.next
         while(current !== null) {
@@ -112,7 +107,7 @@ class List {
                 const n = new Node(element)
                 n.next = current.next
                 current.next = n
-                return index + 1
+                return index
             }
             current = current.next
             i++
