@@ -56,6 +56,37 @@ const ensure = (condition, message) => {
     }
 }
 
+const hash = (key, length) => {
+    let hash = 0
+    for(let i = 0; i < key.length; i++) {
+        hash += key.charCodeAt(i)
+    }
+    // while(key !== '\0') {
+    //     hash += key++
+    // }
+    return hash % length
+}
+
+const nextPrime = (length) => {
+    if(length % 2 === 0) {
+        length += 1
+    }
+    
+    let isPrime = true
+    while(true) {
+        length += 2
+        for(let i = 3; i * i <= length; i += 2) {
+            if(length % i === 0) {
+                isPrime = false;
+                break
+            }
+        }
+        if(isPrime) {
+            return length
+        }
+    }
+}
+
 module.exports =  {
     ensure,
     log,
@@ -64,4 +95,6 @@ module.exports =  {
     heapLog,
     half,
     exchange,
+    hash,
+    nextPrime
 }
