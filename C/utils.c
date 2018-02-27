@@ -19,16 +19,16 @@ nextPrime(int length) {
         length++;
     }
     int i;
-    bool isPrime = false;
+    bool isPrime = true;
     while(true) {
         length += 2;
         for(i = 3; i*i <= length; i+= 2) {
             if(length % i == 0) {
-                isPrime = true;
+                isPrime = false;
                 break;
             }
         }
-        if(!isPrime) {
+        if(isPrime) {
             return length;
         }
     }
