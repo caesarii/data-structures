@@ -1,5 +1,5 @@
 
-const {log, formattedLog} = require('./utils')
+const {log, ensure, formattedLog} = require('./utils')
 
 class Node {
     constructor(element) {
@@ -104,11 +104,11 @@ class List {
     }
     
     insert(index, element) {
-        // 在指定索引后插入元素
+        // 在指定索引插入元素
         let i = 0
         let current = this.next
         while(current !== null) {
-            if(i === index) {
+            if(i === index - 1) {
                 const n = new Node(element)
                 n.next = current.next
                 current.next = n
@@ -136,7 +136,7 @@ class List {
     }
     
     clear() {
-        while(this.next !== null) {
+        while(this.length !== 0) {
             this.shift()
         }
     }
@@ -157,22 +157,30 @@ if(require.main = module) {
     list.append(3)
     list.prepend(1)
     list.prepend(0)
-    // list.shift()
-    const contained = list.contains(5)
-    log(contained)
+    ensure(list.length === 4, 'test list length')
+    list.log()
+    
+    ensure(list.contains(5) === false, 'test list contains 1')
+    ensure(list.contains(3) === true, 'test list contains 2')
+    
     
     const i = list.indexOf(3)
-    log('i', i)
+    ensure(i === 3, 'test list indexOf')
     
     const e = list.elementAt(2)
-    log('e', e)
+    ensure(e === 2, 'test list elementAt')
     
     list.insert(2, 2.5)
-    list.insert(4, 4)
+    ensure(list.indexOf(2.5) === 2, 'test list insert')
     
     list.change(4, 5)
+    ensure(list.indexOf(5) === 4, 'test list change')
+    
+    list.shift()
+    ensure(list.length === 3, 'test list shift 1')
+    ensure(list.elementAt(0) === 1, 'test list shift 2')
     
     list.clear()
+    ensure(list.length === 0, 'test list clear')
     
-    list.log()
 }

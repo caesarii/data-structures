@@ -48,7 +48,16 @@ const exchange = (list, i, j) => {
     list[j] = temp
 }
 
+const ensure = (condition, message) => {
+    if(condition) {
+        log(message, 'succeed')
+    } else {
+        log(message, 'failed')
+    }
+}
+
 module.exports =  {
+    ensure,
     log,
     formattedLog,
     max,

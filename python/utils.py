@@ -12,3 +12,8 @@ def heapLog(element, n):
         if n in breakpoint:
             log('\n')
 
+def ensure(condition, message):
+    if condition:
+        log(message, 'succeed')
+    else:
+        log(message, 'failed')
