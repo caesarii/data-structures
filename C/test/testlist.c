@@ -24,22 +24,22 @@ testListLength() {
 
 void
 testListContains() {
-    type a1[] = {1, 2, 3};
-    int n1 = 3;
-    List *l1 = ListCreate(a1, n1);
-    ensure(ListContains(l1, 1) == true, "test list contains 1");
-
-    type a2[] = {};
-    int n2 = 0;
-    List *l2 = ListCreate(a2, n2);
-    ensure(ListContains(l2, 1) == false, "test list contains 2");
-
-    type a3[] = {1, 2, 3};
-    int n3 = 3;
-    List *l3 = ListCreate(a3, n3);
-    ensure(ListContains(l3, 4) == false, "test list contains 3");
-
-    printf("contains\n");
+//    type a1[] = {1, 2, 3};
+//    int n1 = 3;
+//    List *l1 = ListCreate(a1, n1);
+//    ensure(ListContains(l1, 1) == true, "test list contains 1");
+//
+//    type a2[] = {};
+//    int n2 = 0;
+//    List *l2 = ListCreate(a2, n2);
+//    ensure(ListContains(l2, 1) == false, "test list contains 2");
+//
+//    type a3[] = {1, 2, 3};
+//    int n3 = 3;
+//    List *l3 = ListCreate(a3, n3);
+//    ensure(ListContains(l3, 4) == false, "test list contains 3");
+//
+//    printf("contains\n");
 }
 
 void
@@ -96,10 +96,10 @@ testListPrepend() {
 
 void
 testListIndexOfElement() {
-    type a1[] = {1, 2, 3};
-    int n1 = 3;
-    List *l1 = ListCreate(a1, n1);
-    ensure(ListIndexOfElement(l1, 1) == 0, "test list indexOf 1");
+//    type a1[] = {1, 2, 3};
+//    int n1 = 3;
+//    List *l1 = ListCreate(a1, n1);
+//    ensure(ListIndexOfElement(l1, 1) == 0, "test list indexOf 1");
 
 //    type a2[] = {};
 //    int n2 = 0;

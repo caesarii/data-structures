@@ -51,7 +51,7 @@
 		5EA40A10202AFDB5002A98DF /* main.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = main.c; path = ../../main.c; sourceTree = "<group>"; };
 		5EA40A11202AFDB5002A98DF /* Queue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Queue.h; path = ../../Queue.h; sourceTree = "<group>"; };
 		5EA40A12202AFDB5002A98DF /* test */ = {isa = PBXFileReference; lastKnownFileType = folder; name = test; path = ../../test; sourceTree = "<group>"; };
-		5EA40A13202AFDB5002A98DF /* hashtable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = hashtable.h; path = ../../hashtable.h; sourceTree = "<group>"; };
+		5EA40A13202AFDB5002A98DF /* HashTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HashTable.h; path = ../../HashTable.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,7 +89,7 @@
 				5EA40A04202AFDB4002A98DF /* DLList.c */,
 				5EA40A06202AFDB4002A98DF /* DLList.h */,
 				5EA40A0C202AFDB5002A98DF /* HashTable.c */,
-				5EA40A13202AFDB5002A98DF /* hashtable.h */,
+				5EA40A13202AFDB5002A98DF /* HashTable.h */,
 				5EA40A03202AFDB4002A98DF /* List.c */,
 				5EA40A0A202AFDB4002A98DF /* List.h */,
 				5EA40A10202AFDB5002A98DF /* main.c */,
