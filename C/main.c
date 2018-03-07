@@ -9,14 +9,14 @@
 #include "./test/testbst.c"
 int main()
 {
-    testList();
-    testQueue();
-    testStack();
+//    testList();
+//    testQueue();
+//    testStack();
     testHashTable();
 
-    testDLList();
+//    testDLList();
 
-    testBST();
+//    testBST();
 
     printf("\nHello world!\n");
     return 0;

@@ -2,15 +2,15 @@
 
 #include "utils.h"
 
-int
-hash(const char * key, int length) {
-    int hash = 0;
-    while(*key != '\0') {
-        hash += *key++;
-    }
-
-    return (hash % length);
-}
+//int
+//hash(const char * key, int length) {
+//    int hash = 0;
+//    while(*key != '\0') {
+//        hash += *key++;
+//    }
+//
+//    return (hash % length);
+//}
 
 
 int

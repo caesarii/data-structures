@@ -3,10 +3,6 @@
 #include <stdio.h>
 
 int
-hash(const char * key, int length);
-
-
-int
 nextPrime(int length);
 
 void

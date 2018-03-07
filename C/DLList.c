@@ -95,7 +95,7 @@ DLListAppend(List *list, type element) {
     n->prev = NULL;
 
     // append
-    if(ListLength(list) == 0) {
+    if(DLListLength(list) == 0) {
         list->next = n;
     } else {
         list->tail->next = n;

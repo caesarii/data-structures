@@ -16,7 +16,7 @@ struct TreeStruct {
 Tree *
 BSTCreate(void) {
     Tree *tree = malloc(sizeof(Tree));
-    tree->element = NULL;
+    tree->element = 0;
     tree->leftChild = NULL;
     tree->rightChild = NULL;
     return tree;
