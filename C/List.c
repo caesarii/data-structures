@@ -67,11 +67,11 @@ ListLength(List *list) {
 }
 
 bool
-ListContains(List *list, type element) {
+ListContains(List *list, type element, FunctionElementEqual equal) {
     bool contained = false;
     Node *l = list->next;
     while(l != NULL) {
-        if((*l).element == element) {
+        if(equal(l->element, element)) {
             contained = true;
             break;
         }
@@ -114,7 +114,7 @@ ListPrepend(List *list, type element) {
 }
 
 int
-ListIndexOfElement(List *list, type element) {
+ListIndexOfElement(List *list, type element, FunctionElementEqual equal) {
     int index = 0;
     Node *l = list->next;
     while(l != NULL) {

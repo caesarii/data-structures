@@ -31,8 +31,9 @@ ListLength(List *list);
 /*
 检查一个 GuaList 中是否存在某个元素
 */
+typedef bool (*FunctionElementEqual)(void *, void *);
 bool
-ListContains(List *list, type element);
+ListContains(List *list, type element, FunctionElementEqual equal);
 
 /*
 在 GuaList 的末尾添加一个元素
@@ -51,7 +52,7 @@ ListPrepend(List *list, type element);
 如果不存在, 返回 -1
 */
 int
-ListIndexOfElement(List *list, type element);
+ListIndexOfElement(List *list, type element, FunctionElementEqual equal);
 
 /*
 往一个 GuaList 中插入一个元素, 下标(序号) 为 index
