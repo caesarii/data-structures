@@ -191,7 +191,7 @@ ListChangeElementAtIndex(List *list, int element, int index) {
 
 int
 ListElementAtIndex(List *list, int index){
-    int e;
+    int e = -1;
     int i = 0;
 
     Node *l = list->next;
